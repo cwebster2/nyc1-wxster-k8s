@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: wxster.com
+  namespace: ingress-nginx
+spec:
+  secretName: wxster-com-tls
+  issuerRef:
+    name: letsencrypt-sni
+    kind: ClusterIssuer
+  dnsNames:
+  - wxster.com
+  - '*.wxster.com'
